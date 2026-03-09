@@ -48,6 +48,10 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (Vector3.Distance(transform.position, player.position) < 1.5f)
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
         switch (state)
         {
             case State.Idle:
@@ -125,6 +129,14 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            FindObjectOfType<GameManager>().GameOver();
+        }
+    }
+
     bool CanSeePlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
@@ -151,4 +163,5 @@ public class EnemyAI : MonoBehaviour
 
         return false;
     }
+
 }
