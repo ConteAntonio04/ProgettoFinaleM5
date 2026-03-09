@@ -129,13 +129,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    /*void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
             FindObjectOfType<GameManager>().GameOver();
         }
-    }
+    }*/
 
     bool CanSeePlayer()
     {
