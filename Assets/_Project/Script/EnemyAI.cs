@@ -129,14 +129,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    /*void OnTriggerEnter(Collider collider)
-    {
-        if (collider.CompareTag("Player"))
-        {
-            FindObjectOfType<GameManager>().GameOver();
-        }
-    }*/
-
     bool CanSeePlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
